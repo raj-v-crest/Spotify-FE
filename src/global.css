@@ -1,0 +1,116 @@
+/* Common Typography */
+.common-typography {
+  margin-top: 70px;
+  margin-bottom: 20px;
+  color: black; /* Spotify green or any color you prefer */
+}
+
+/* Page */
+.file-container {
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.loading-spinner {
+  display: block;
+  margin: 0 auto;
+}
+
+.table-container {
+  margin-top: 20px;
+}
+
+.table-header {
+  background-color: #1db954; /* Spotify green */
+}
+
+.table-cell-header {
+  color: #fff;
+}
+
+.table-cell-header:hover {
+  background-color: #333; /* Darken on hover */
+}
+
+/* Header */
+.header-title-box {
+  margin-left: 300px; /* Adjust based on sidebar width */
+}
+
+/* Drawer */
+.custom-drawer {
+  width: 220px;
+  flex-shrink: 0;
+}
+
+.custom-drawer .MuiDrawer-paper {
+  width: 300px;
+  box-sizing: border-box;
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Logo */
+.box-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 60px;
+  padding: 10px 20px;
+  border-bottom: 1px solid #333;
+}
+
+.box-logo-img {
+  max-width: 100%;
+  max-height: 40px;
+}
+
+/* Sidebar */
+.sidebar-list {
+  margin-top: 20px;
+}
+
+.sidebar-item {
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-text {
+  color: #fff;
+}
+
+.sidebar-icon {
+  color: #fff;
+}
+
+/* Toolbar (Header) */
+.Toolbar-header {
+  background-color: #1db954; /* Spotify green */
+  height: 80px; /* Adjust the height to your needs */
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 16px;
+  margin-top: auto;
+  background-color: #f1f1f1;
+  margin-left: 215px; /* Adjust based on sidebar */
+}
+
+/* App Layout */
+.App-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.App-content {
+  display: flex;
+  flex: 1;
+}
+
+.App-main {
+  flex-grow: 1;
+  background-color: #f4f4f4;
+  padding: 3rem;
+}
