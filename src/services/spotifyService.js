@@ -33,7 +33,7 @@ export const searchArtists = async (query) => {
 
   try {
     const res = await axios.get(
-      `https://api.spotify.com/v1/search?q=${query}&type=artist&limit=10`,
+      `https://api.spotify.com/v1/search?q=${query}&type=artist&limit=5`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
