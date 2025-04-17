@@ -5,7 +5,7 @@ const Header = () => (
   <AppBar position="fixed">
     <Toolbar className="Toolbar-header">
       <Box className="header-title-box">
-        <Typography variant="h6">Spotify Admin</Typography>
+        <Typography variant="h6">Spotify Panel</Typography>
       </Box>
     </Toolbar>
     {/* </div> */}

@@ -28,10 +28,6 @@
   color: #fff;
 }
 
-.table-cell-header:hover {
-  background-color: #333; /* Darken on hover */
-}
-
 /* Header */
 .header-title-box {
   margin-left: 300px; /* Adjust based on sidebar width */
@@ -94,7 +90,7 @@
   padding: 16px;
   margin-top: auto;
   background-color: #f1f1f1;
-  margin-left: 215px; /* Adjust based on sidebar */
+  margin-left: 276px; /* Adjust based on sidebar */
 }
 
 /* App Layout */
@@ -113,4 +109,38 @@
   flex-grow: 1;
   background-color: #f4f4f4;
   padding: 3rem;
+}
+
+.pagination-container {
+  color: #111;
+  padding: 16px;
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rows-per-page {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.select-custom {
+  color: #111 !important;
+}
+
+.select-custom .MuiSelect-icon {
+  color: #111;
+}
+
+.select-custom::before,
+.select-custom::after {
+  border-bottom-color: #111;
 }

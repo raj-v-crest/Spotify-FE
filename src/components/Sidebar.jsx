@@ -7,7 +7,14 @@ import {
   ListItemIcon,
   Box,
 } from "@mui/material";
-import { Dashboard, LibraryMusic, People } from "@mui/icons-material";
+import {
+  Dashboard,
+  LibraryMusic,
+  People,
+  RecordVoiceOver,
+} from "@mui/icons-material";
+import AlbumIcon from "@mui/icons-material/Album";
+
 import { NavLink, useLocation } from "react-router-dom";
 import "../global.css";
 
@@ -62,6 +69,38 @@ const Sidebar = () => {
           <ListItemText
             primary="Songs"
             sx={{ color: isActive("/songs") ? "#1DB954" : "#fff" }}
+          />
+        </ListItem>
+        <ListItem
+          button
+          component={NavLink}
+          to="/artists"
+          className="sidebar-item"
+        >
+          <ListItemIcon>
+            <RecordVoiceOver
+              sx={{ color: isActive("/artists") ? "#1DB954" : "#fff" }}
+            />
+          </ListItemIcon>
+          <ListItemText
+            primary="Artists"
+            sx={{ color: isActive("/artists") ? "#1DB954" : "#fff" }}
+          />
+        </ListItem>
+        <ListItem
+          button
+          component={NavLink}
+          to="/albums"
+          className="sidebar-item"
+        >
+          <ListItemIcon>
+            <AlbumIcon
+              sx={{ color: isActive("/albums") ? "#1DB954" : "#fff" }}
+            />
+          </ListItemIcon>
+          <ListItemText
+            primary="Albums"
+            sx={{ color: isActive("/albums") ? "#1DB954" : "#fff" }}
           />
         </ListItem>
 
