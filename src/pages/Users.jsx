@@ -102,7 +102,9 @@ const Users = () => {
       </Box>
 
       {loading ? (
-        <CircularProgress className="loading-spinner" />
+        <Box className="loading-container">
+          <CircularProgress className="loading-spinner" />{" "}
+        </Box>
       ) : (
         <>
           <TableContainer component={Paper} className="table-container">
