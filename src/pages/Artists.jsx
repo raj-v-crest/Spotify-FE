@@ -7,6 +7,8 @@ import "../global.css";
 const Artists = () => {
   const [artists, setArtists] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [page] = useState(1);
+  const [loadingMore] = useState(false);
 
   const fetchArtists = async (searchQuery = "indian singers", page = 1) => {
     setLoading(true);
