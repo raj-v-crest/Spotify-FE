@@ -1,12 +1,6 @@
 // src/pages/Artists.js
 import React, { useEffect, useState } from "react";
-import {
-  Typography,
-  Box,
-  Avatar,
-  Button,
-  CircularProgress,
-} from "@mui/material";
+import { Typography, Box, Avatar, CircularProgress } from "@mui/material";
 import { searchArtists } from "../services/spotifyService";
 import "../global.css";
 
@@ -26,13 +20,6 @@ const Artists = () => {
   useEffect(() => {
     fetchArtists("indian singers", page);
   }, [page]);
-
-  const handleLoadMore = () => {
-    setPage((prevPage) => prevPage + 1);
-    setLoadingMore(true);
-    fetchArtists("indian singers", page + 1);
-    setLoadingMore(false);
-  };
 
   return (
     <div className="file-container">
