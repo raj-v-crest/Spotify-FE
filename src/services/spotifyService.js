@@ -4,7 +4,7 @@ import axios from "axios";
 const clientId = "59936df56d6040d392f140b61c1619fa";
 const clientSecret = "32ed724a1f444426ab6a008dcf0f329f";
 
-const getAccessToken = async () => {
+export const getAccessToken = async () => {
   const authString = btoa(`${clientId}:${clientSecret}`);
 
   try {
@@ -49,6 +49,48 @@ export const searchArtists = async (query) => {
     return bollywoodArtists;
   } catch (err) {
     console.error("Error searching artists:", err);
+    return [];
+  }
+};
+
+export const getBollywoodAlbums = async () => {
+  const token = await getAccessToken();
+  if (!token) return [];
+
+  try {
+    const res = await axios.get(
+      `https://api.spotify.com/v1/search?q=bollywood&type=album&limit=10`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    // You can also further filter by language if needed
+    return res.data.albums.items;
+  } catch (err) {
+    console.error("Error fetching Bollywood albums:", err);
+    return [];
+  }
+};
+
+export const getBollywoodSongs = async () => {
+  const token = await getAccessToken();
+  if (!token) return [];
+
+  try {
+    const res = await axios.get(
+      "https://api.spotify.com/v1/search?q=bollywood&type=track&limit=10",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    return res.data.tracks.items;
+  } catch (err) {
+    console.error("Error fetching Bollywood songs:", err);
     return [];
   }
 };
