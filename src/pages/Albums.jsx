@@ -4,9 +4,7 @@ import {
   Typography,
   Box,
   Avatar,
-  Card,
   CardContent,
-  CardMedia,
   CircularProgress,
 } from "@mui/material";
 import { getBollywoodAlbums } from "../services/spotifyService";

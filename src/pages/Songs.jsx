@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import {
   Typography,
   Box,
-  Card,
   CardContent,
   CardMedia,
   CircularProgress,
