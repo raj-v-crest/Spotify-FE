@@ -179,10 +179,3 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgba(0, 0, 0, 0); /* slightly visible on hover if needed */
 }
-
-/* Truncate long text with ellipsis */
-.truncate-text {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
