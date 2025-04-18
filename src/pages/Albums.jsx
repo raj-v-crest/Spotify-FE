@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import {
   Typography,
   Box,
+  Avatar,
   Card,
   CardContent,
   CardMedia,
@@ -28,7 +29,7 @@ const Albums = () => {
   return (
     <div className="file-container">
       <Typography variant="h5" gutterBottom className="common-typography">
-        Bollywood Albums
+        Albums
       </Typography>
 
       {loading ? (
@@ -36,22 +37,71 @@ const Albums = () => {
           <CircularProgress sx={{ color: "#fff" }} />
         </Box>
       ) : (
-        <Box display="flex" flexWrap="wrap" gap={2}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: 2,
+            paddingBottom: "20px",
+          }}
+        >
           {albums.map((album) => (
-            <Card key={album.id} sx={{ width: 200 }}>
-              <CardMedia
-                component="img"
-                height="200"
-                image={album.images[0]?.url}
+            <Box
+              key={album.id}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                backgroundColor: "black",
+                // padding: "12.5px",
+                paddingTop: "12.5px",
+                paddingRight: "12.5px",
+                paddingLeft: "12.5px",
+                borderRadius: "15px",
+                boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",
+                border: "2px solid #1db954",
+                transition: "all 0.3s ease",
+                width: "200px",
+                flexShrink: 0,
+                "&:hover": {
+                  transform: "scale(1.05)",
+                  boxShadow: "0 6px 20px rgba(0, 0, 0, 0.15)",
+                  borderColor: "#27ae60",
+                },
+              }}
+            >
+              <Avatar
+                src={album.images[0]?.url}
                 alt={album.name}
+                sx={{
+                  width: 200,
+                  height: 200,
+                  marginBottom: "16px",
+                  objectFit: "cover",
+                  borderRadius: "8px",
+                  border: "3px solid #1db954",
+                }}
               />
               <CardContent>
-                <Typography variant="subtitle1">{album.name}</Typography>
-                <Typography variant="body2" color="textSecondary">
-                  {album.artists.map((artist) => artist.name).join(", ")}
+                <Typography
+                  variant="h6"
+                  gutterBottom
+                  sx={{
+                    fontWeight: "bold",
+                    color: "#1db954",
+                    textAlign: "center",
+                    display: "block",
+                    width: "100%",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {album.name.length > 17
+                    ? album.name.slice(0, 17) + "..."
+                    : album.name}
                 </Typography>
               </CardContent>
-            </Card>
+            </Box>
           ))}
         </Box>
       )}

@@ -36,12 +36,9 @@ const Songs = () => {
       ) : (
         <Box
           sx={{
-            display: "flex", // Display songs in a single line
+            display: "flex",
             gap: 2,
-            overflowX: "auto", // Allow horizontal scrolling if needed
             paddingBottom: "20px",
-            paddingLeft: "12px",
-            paddingRight: "12px",
           }}
         >
           {songs.map((song) => (
@@ -52,7 +49,10 @@ const Songs = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 backgroundColor: "black",
-                padding: "12.5px",
+                // padding: "12.5px",
+                paddingTop: "12.5px",
+                paddingRight: "12.5px",
+                paddingLeft: "12.5px",
                 borderRadius: "15px",
                 boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",
                 border: "2px solid #1db954",
@@ -72,10 +72,12 @@ const Songs = () => {
                 image={song.album.images[0]?.url}
                 alt={song.name}
                 sx={{
-                  borderRadius: "8px",
-                  width: "100%",
+                  width: 200,
+                  height: 200,
+                  marginBottom: "16px",
                   objectFit: "cover",
-                  marginBottom: "10px",
+                  borderRadius: "8px",
+                  border: "3px solid #1db954",
                 }}
               />
               <CardContent>
