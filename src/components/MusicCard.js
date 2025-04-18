@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
-import "../global.css";
 
 const MusicCard = ({
   image,
@@ -28,16 +27,22 @@ const MusicCard = ({
       <CardContent>
         <Typography
           variant="subtitle1"
-          className="truncate-text"
-          title={title} // Tooltip on hover
+          sx={{
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+          }}
         >
           {title}
         </Typography>
         <Typography
           variant="body2"
           color="textSecondary"
-          className="truncate-text"
-          title={subtitle}
+          sx={{
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+          }}
         >
           {subtitle}
         </Typography>
