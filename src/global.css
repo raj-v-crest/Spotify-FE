@@ -42,7 +42,7 @@
 .custom-drawer .MuiDrawer-paper {
   width: 300px;
   box-sizing: border-box;
-  background-color: #121212;
+  background-color: black;
   color: #fff;
 }
 
@@ -150,8 +150,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full height of the viewport */
+  height: 100%; /* Full height of the viewport */
   background-color: #f4f4f4; /* Light background color */
+  min-height: 200px;
 }
 /* Hide the default scrollbar but keep the thin one visible */
 html,

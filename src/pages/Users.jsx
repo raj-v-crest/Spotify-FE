@@ -11,7 +11,6 @@ import {
   TableHead,
   TableRow,
   Paper,
-  CircularProgress,
   Box,
   Select,
   MenuItem,
@@ -20,6 +19,7 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+import Loader from "../components/Loader"; // ✅ Import your reusable loader
 import "../global.css";
 
 const Users = () => {
@@ -102,9 +102,7 @@ const Users = () => {
       </Box>
 
       {loading ? (
-        <Box className="loading-container">
-          <CircularProgress className="loading-spinner" />{" "}
-        </Box>
+        <Loader /> // ✅ Use reusable loader
       ) : (
         <>
           <TableContainer component={Paper} className="table-container">
@@ -139,9 +137,8 @@ const Users = () => {
               </TableBody>
             </Table>
 
-            {/* Pagination inside the table box */}
+            {/* Pagination */}
             <Box className="pagination-container">
-              {/* Left - Rows per page */}
               <Box className="rows-per-page">
                 <Typography>Rows per page:</Typography>
                 <Select
@@ -158,7 +155,6 @@ const Users = () => {
                 </Select>
               </Box>
 
-              {/* Right - Pagination info and arrows */}
               <Box className="pagination-info">
                 <Typography>
                   {page * rowsPerPage + 1}–

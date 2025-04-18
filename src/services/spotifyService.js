@@ -5,7 +5,6 @@ const clientId = "59936df56d6040d392f140b61c1619fa";
 const clientSecret = "32ed724a1f444426ab6a008dcf0f329f";
 
 const getAccessToken = async () => {
-  console.log(clientId, "jjjjjjjjjjjjjj");
   const authString = btoa(`${clientId}:${clientSecret}`);
 
   try {
@@ -19,7 +18,6 @@ const getAccessToken = async () => {
         },
       }
     );
-    console.log(response.data.access_token, "response.data.access_token");
     return response.data.access_token;
   } catch (error) {
     console.error("Error fetching Spotify token:", error);
@@ -33,7 +31,7 @@ export const searchArtists = async (query) => {
 
   try {
     const res = await axios.get(
-      `https://api.spotify.com/v1/search?q=${query}&type=artist&limit=5`,
+      `https://api.spotify.com/v1/search?q=${query}&type=artist&limit=50`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -41,7 +39,14 @@ export const searchArtists = async (query) => {
       }
     );
 
-    return res.data.artists.items;
+    const bollywoodArtists = res.data.artists.items.filter((artist) =>
+      artist.genres.some((genre) => genre.toLowerCase().includes("bollywood"))
+    );
+
+    // Sort them by followers descending
+    bollywoodArtists.sort((a, b) => b.followers.total - a.followers.total);
+
+    return bollywoodArtists;
   } catch (err) {
     console.error("Error searching artists:", err);
     return [];
